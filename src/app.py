@@ -3,10 +3,20 @@
 import os
 
 from flask import Flask
+from flask import send_from_directory
 from markdown import markdown
 
-# TODO load .md file and render html template
-# generate index from folders and files
+# TODO load .md file and render html template [done]
+# TODO generate index from folders and files [done]
+
+# TODO create basic template: sidebar + main window []
+#     TODO create template from index.html
+
+# TODO create solarized dark css theme []
+# TODO create acme theme []
+# TODO create hackernews theme []
+# TODO create theme switcher []
+
 
 # domain ovciarik.io
 # alternative between github and common markdown
@@ -24,10 +34,25 @@ def common_md_to_html(f):
 # generate index
 
 
+@app.route('/js/<path:path>')
+def send_js(path):
+    return send_from_directory('./static/js', path)
+
+
+@app.route('/css/<path:path>')
+def send_css(path):
+    return send_from_directory('./static/css', path)
+
+
+@app.route('/favicon.ico')
+def send_favicon():
+    return send_from_directory('./static/ico/', 'favicon.ico')
+
+
 @app.route('/')
 def test():
-    with open('./blog/hello.md', 'r') as f:
-        return common_md_to_html(f.read())
+    with open('./templates/index.html', 'r') as f:
+        return get_index('./blog') + f.read()
 
 
 @app.route('/<path:path>')
@@ -40,7 +65,7 @@ def get_index(path):
 
     file_list = os.walk('./blog')
 
-    index = ''
+    index = '[/](/)\n\n'
 
     for xx in file_list:
         prefix = xx[0].replace('./blog', '')
@@ -49,11 +74,7 @@ def get_index(path):
             index += '[{}]({})\n\n'.format(element, element)
     index += '---'
 
-
     return markdown(index)
-
-
-
 
 
 def get_md(file_path):
