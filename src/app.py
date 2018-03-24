@@ -4,6 +4,7 @@ import os
 
 from flask import Flask
 from flask import send_from_directory
+from flask import render_template
 from markdown import markdown
 
 # TODO load .md file and render html template [done]
@@ -34,15 +35,6 @@ def common_md_to_html(f):
 # generate index
 
 
-@app.route('/js/<path:path>')
-def send_js(path):
-    return send_from_directory('./static/js', path)
-
-
-@app.route('/css/<path:path>')
-def send_css(path):
-    return send_from_directory('./static/css', path)
-
 
 @app.route('/favicon.ico')
 def send_favicon():
@@ -52,13 +44,22 @@ def send_favicon():
 @app.route('/')
 def test():
     with open('./templates/index.html', 'r') as f:
-        return get_index('./blog') + f.read()
+        return render_template('index.html', sidebar=get_index('./blog'), content='<p>content</p>')
 
 
 @app.route('/<path:path>')
 def get_md(path):
+    if path.endswith('.css'):
+        print(path)
+        print(path.split('/css')[-1])
+        return send_from_directory('./static/css', path.split('css/')[-1])
+
+    if path.endswith('.js'):
+        print(path)
+        return send_from_directory('./static/js', path.split('js/')[-1])
+
     file_path = './blog/{}'.format(path)
-    return get_index('./blog') + get_md(file_path)
+    return render_template('index.html', sidebar=get_index('./blog'), content=get_md(file_path))
 
 
 def get_index(path):
@@ -72,7 +73,6 @@ def get_index(path):
         for xxx in xx[2]:
             element = prefix + '/' + xxx
             index += '[{}]({})\n\n'.format(element, element)
-    index += '---'
 
     return markdown(index)
 

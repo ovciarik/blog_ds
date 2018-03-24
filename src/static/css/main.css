@@ -100,6 +100,41 @@ textarea {
 
 
 
+.container { 
+  position:relative;
+  padding:0 0 0 55px;
+}
+
+#sidebar {
+
+  width: 10%;
+  display: inline;
+  float: left;
+}
+
+#header { 
+    border:1px solid #000; 
+    width:100px; 
+    height:20px; 
+    margin:0 0 5px 0;
+}
+
+
+#content { 
+    position: fixed;
+    left: 30%;
+    width: 90%;
+    display: inline;
+    /* padding: 200px; */
+    float: left;
+    /* overflow: hidden; */
+    max-width: 100ch;
+    margin: 0 auto;
+    justify-content: center;
+}
+#footer { border:1px solid #000; width:100px; height:20px;
+    margin:5px 0 0 0;
+}
 
 
 
@@ -289,3 +324,4 @@ textarea {
         page-break-after: avoid;
     }
 }
+
