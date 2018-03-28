@@ -12,6 +12,7 @@ from markdown import markdown
 
 # TODO create basic template: sidebar + main window []
 #     TODO create template from index.html
+# TODO center that fucking css
 
 # TODO create solarized dark css theme []
 # TODO create acme theme []

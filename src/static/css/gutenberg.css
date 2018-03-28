@@ -14,7 +14,7 @@
      */
 html {
   /* Change the default font family in all browsers (opinionated). */
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
   line-height: 1.15;
   /* 1 */
   -ms-text-size-adjust: 100%;
@@ -99,9 +99,9 @@ pre {
      * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
      */
 a {
-  background-color: transparent;
+  /* background-color: transparent; */
   /* 1 */
-  -webkit-text-decoration-skip: objects;
+  /* -webkit-text-decoration-skip: objects; */
   /* 2 */ }
 
 /* Text-level semantics
@@ -113,9 +113,9 @@ a {
 abbr[title] {
   border-bottom: none;
   /* 1 */
-  text-decoration: underline;
+  /* text-decoration: underline; */
   /* 2 */
-  text-decoration: underline dotted;
+  /* text-decoration: underline dotted; */
   /* 2 */ }
 
 /**
@@ -154,8 +154,9 @@ dfn {
      * Add the correct background and color in IE 9-.
      */
 mark {
-  background-color: #ff0;
-  color: #000; }
+  /* background-color: #ff0; */
+  /* color: #000; */ 
+  }
 
 /**
      * Add the correct font size in all browsers.
@@ -219,7 +220,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
   /* 1 */
   font-size: 100%;
   /* 1 */
@@ -426,7 +427,7 @@ p:first-line,
 div:first-line,
 blockquote:first-line,
 li:first-line {
-  background: transparent !important;
+  /* background: transparent !important; */
   box-shadow: none !important;
   text-shadow: none !important; }
 
@@ -438,9 +439,9 @@ html {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: #fff !important;
-  color: #000 !important;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* background: #fff !important; */
+  /* color: #000 !important; */
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
   font-size: 1rem;
   line-height: 1.5;
   margin: 0 auto;
@@ -466,8 +467,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: #000;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* color: #000; */
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
   line-height: 1.2;
   margin-bottom: 0.75rem;
   margin-top: 0; }
@@ -491,8 +492,8 @@ h6 {
   font-size: 1rem; }
 
 a, a:visited {
-  color: #000;
-  text-decoration: underline;
+  /* color: #000; */
+  /* text-decoration: underline; */
   word-wrap: break-word; }
 
 table {
@@ -514,7 +515,7 @@ code,
 pre,
 kbd {
   border: 1px solid #bbb;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  /* font-family: Menlo, Monaco, Consolas, "Courier New", monospace; */
   font-size: 85%; }
 
 code,
