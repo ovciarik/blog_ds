@@ -1,55 +1,72 @@
+
+
 body {
-    background: #002b36; /* base03 */
+    /* background: #002b36; base03 */
+    background: #fdf6e3; /* base3 */
     /* font-color: #839496; */
-    color: #839496; /* base0 */
+    /* color: #839496; base0 */
+    color: #657b83; /* base00 */
     font-family: 'Source Sans Pro';
     text-decoration: none;
 }
 
-a {
-    color: #268bd2;
-    text-decoration: none;
+pre {
+    /* background: #073642; base02 */
+    background: #eee8d5; /* base2 */
+    font-family: 'Source Code Pro';
 }
 
-/* a:visited { */
-    /* color: #268bd2; */
-    /* text-decoration: none; */
-/* } */
+code {
+    /* background: #073642; base02 */
+    background: #eee8d5; /* base2 */
+    /* color: #93a1a1; base1 */
+    color: #586e75; /* base01 */
+    font-family: 'Source Code Pro';
+}
 
-/* a:active { */
-    /* color: #268bd2; */
+a {
+    color: #268bd2;
     /* text-decoration: none; */
-/* } */
+}
 
-.container { 
-    /* position:relative; */
-    /* padding:0 0 0 55px; */
-    /* background-color: black; */
+#hard-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 15%;
+    position: absolute;
+    background: #eee8d5; /* base3 */
+    border-right: 1px solid #586e75;
+    margin: 0 0 0 0;
+    height: 100%;
+}
+
+#sidebar-bg {
+    width: 15%;
+    position: absolute;
+    background: #eee8d5; /* base3 */
+    border-right: 1px solid #586e75;
+    margin: 0 0 0 0;
+    height: 100%;
 }
 
 #sidebar {
-    /* width: 20%; */
-    /* display: inline; */
-    /* display: inline-text; */
-    /* display: inline-block; */
-    float: left;
-    margin: 0 auto;
-    /* padding: 10px; */
+    margin-left: 5%;
+    margin-top: 100px;
 }
 
-
 #content { 
-    /* left: 30%; */
-    /* width: 50%; */
-    display: inline-text;
-    /* position: absolute; */
-    /* display: inline-block; */
-    /* vertical-align: middle; */
-    /* padding: 10px; */
-    /* float: right; */
-    overflow: hidden;
     max-width: 100ch;
     margin: 0 auto;
-    /* background: black; */
-    /* justify-content: center; */
+    margin-top: 100px;
+}
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:10px;
+    width:100% 
 }
