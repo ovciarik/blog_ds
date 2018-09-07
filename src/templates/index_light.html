@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/gutenberg.css">
         <link rel="stylesheet" href="css/modern.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style_light.css">
+        <link rel="stylesheet" href="css/style_common.css">
     </head>
     <body>
         <div id="hard-sidebar">
@@ -17,6 +18,11 @@
             </div>
             <div id="content">
                 {{ content|safe }}
+            </div>
+            <div id="theme-buttons">
+                <a href="?theme=default">default</a>
+                <a href="?theme=light">light</a>
+                <a href="?theme=dark">dark</a>
             </div>
         </div>
     </body>

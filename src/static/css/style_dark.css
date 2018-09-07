@@ -1,32 +1,24 @@
 
 
 body {
-    /* background: #002b36; base03 */
-    background: #fdf6e3; /* base3 */
-    /* font-color: #839496; */
-    /* color: #839496; base0 */
-    color: #657b83; /* base00 */
+    background: #002b36;
+    color: #839496;
     font-family: 'Source Sans Pro';
     text-decoration: none;
 }
 
 pre {
-    /* background: #073642; base02 */
-    background: #eee8d5; /* base2 */
-    font-family: 'Source Code Pro';
+    background: #073642;
 }
 
 code {
-    /* background: #073642; base02 */
-    background: #eee8d5; /* base2 */
-    /* color: #93a1a1; base1 */
-    color: #586e75; /* base01 */
+    background: #073642;
+    color: #93a1a1;
     font-family: 'Source Code Pro';
 }
 
 a {
     color: #268bd2;
-    /* text-decoration: none; */
 }
 
 #hard-sidebar {
@@ -37,7 +29,7 @@ a {
 
     width: 15%;
     position: absolute;
-    background: #eee8d5; /* base3 */
+    background: #073642;
     border-right: 1px solid #586e75;
     margin: 0 0 0 0;
     height: 100%;
@@ -46,7 +38,6 @@ a {
 #sidebar-bg {
     width: 15%;
     position: absolute;
-    background: #eee8d5; /* base3 */
     border-right: 1px solid #586e75;
     margin: 0 0 0 0;
     height: 100%;

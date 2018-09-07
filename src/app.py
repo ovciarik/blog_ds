@@ -5,6 +5,7 @@ import os
 from flask import Flask
 from flask import send_from_directory
 from flask import render_template
+from flask import request
 from markdown import markdown
 
 # TODO load .md file and render html template [done]
@@ -44,8 +45,19 @@ def send_favicon():
 
 @app.route('/')
 def test():
-    with open('./templates/index.html', 'r') as f:
-        return render_template('index.html', sidebar=get_index('./blog'), content='<p>content</p>')
+    template = 'index_default.html'
+    theme = 'default'
+
+    try: 
+        theme = request.args["theme"]
+        if theme == 'dark':
+            template = 'index_dark.html'
+        if theme == 'light':
+            template = 'index_light.html'
+    except:
+        pass
+
+    return render_template(template, sidebar=get_index('./blog', theme), content='')
 
 
 @app.route('/<path:path>')
@@ -60,10 +72,23 @@ def get_md(path):
         return send_from_directory('./static/js', path.split('js/')[-1])
 
     file_path = './blog/{}'.format(path)
-    return render_template('index.html', sidebar=get_index('./blog'), content=get_md(file_path))
+
+    template = 'index_default.html'
+    theme = 'default'
+
+    try: 
+        theme = request.args["theme"]
+        if theme == 'dark':
+            template = 'index_dark.html'
+        if theme == 'light':
+            template = 'index_light.html'
+    except:
+        pass
+
+    return render_template(template, sidebar=get_index('./blog', theme), content=gget_md(file_path))
 
 
-def get_index(path):
+def get_index(path, theme):
 
     file_list = os.walk('./blog')
 
@@ -71,14 +96,15 @@ def get_index(path):
 
     for xx in file_list:
         prefix = xx[0].replace('./blog', '')
+        sufix = '?theme=' + theme
         for xxx in xx[2]:
             element = prefix + '/' + xxx
-            index += '[{}]({})\n\n'.format(element, element)
+            url = prefix + '/' + xxx + sufix
+            index += '[{}]({})\n\n'.format(element, url)
 
     return markdown(index)
 
-
-def get_md(file_path):
+def gget_md(file_path):
     with open(file_path, 'r') as f:
         return common_md_to_html(f.read())
 
