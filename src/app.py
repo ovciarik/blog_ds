@@ -11,7 +11,7 @@ from markdown import markdown
 # TODO load .md file and render html template [done]
 # TODO generate index from folders and files [done]
 # TODO create basic template: sidebar + main window [done]
-#     TODO create template from index.html [done]
+# TODO create template from index.html [done]
 # TODO center that fucking css [done]
 # TODO create solarized dark css theme [done]
 # TODO create acme theme [done]
@@ -23,6 +23,12 @@ from markdown import markdown
 # TODO save theme as cookie []
 # TODO expandable file tree view []
 # TODO sidebar toggle as arrow in left middle of screen []
+
+# TODO custom .md parser (github-like ?)
+# TODO reproduce github theme 1:1
+# TODO reproduce hacker news theme 1:1
+
+# TODO .epub viewer
 
 # domain ovciarik.io
 # alternative between github and common markdown
@@ -87,27 +93,18 @@ def get_md(path):
 
 def get_themes(path):
     file_stuff = os.walk('./static/css')
-    # print('------------------------')
     for xx in file_stuff:
-        # print(xx)
         file_list = xx[2]
-        # print(file_list)
         file_list = filter(lambda x: 'theme_' in x, file_list)
-        # print(file_list)
         file_list = map(lambda x: x.replace('theme_', '').replace('.css', ''), file_list)
-        # print(file_list)
-        # print('------------------------')
         file_list = sorted(file_list)
         return file_list
 
 
 
 def get_index(path, theme, sidebar_status):
-
     file_list = os.walk('./blog')
-
     sufix = '?theme={}&sidebar={}'.format(theme, sidebar_status)
-
     index = '[/](/{})\n\n'.format(sufix)
 
     for xx in file_list:
@@ -122,11 +119,3 @@ def get_index(path, theme, sidebar_status):
 def gget_md(file_path):
     with open(file_path, 'r') as f:
         return common_md_to_html(f.read())
-
-
-
-# if __name__ == '__main__':
-    # x = os.walk('./blog')
-    # x = list(x)
-    # print(x)
-    # print(f'{x}')
