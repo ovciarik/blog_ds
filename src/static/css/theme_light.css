@@ -1,0 +1,32 @@
+
+
+body {
+    background: #fdf6e3; /* base3 */
+    color: #657b83; /* base00 */
+    font-family: 'Source Sans Pro';
+    text-decoration: none;
+}
+
+pre {
+    background: #eee8d5; /* base2 */
+}
+
+code {
+    background: #eee8d5; /* base2 */
+    color: #586e75; /* base01 */
+    font-family: 'Source Code Pro';
+}
+
+a {
+    color: #268bd2;
+}
+
+#hard-sidebar {
+    background: #eee8d5; /* base3 */
+    border-right: 1px solid #586e75;
+}
+
+#sidebar-bg {
+    background: #eee8d5; /* base3 */
+    border-right: 1px solid #586e75;
+}

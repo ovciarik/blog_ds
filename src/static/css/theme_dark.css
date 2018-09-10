@@ -1,0 +1,32 @@
+
+
+body {
+    background: #002b36;
+    color: #839496;
+    font-family: 'Source Sans Pro';
+    text-decoration: none;
+}
+
+pre {
+    background: #073642;
+}
+
+code {
+    background: #073642;
+    color: #93a1a1;
+    font-family: 'Source Code Pro';
+}
+
+a {
+    color: #268bd2;
+}
+
+#hard-sidebar {
+    background: #073642;
+    border-right: 1px solid #586e75;
+}
+
+#sidebar-bg {
+    background: #073642;
+    border-right: 1px solid #586e75;
+}

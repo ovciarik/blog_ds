@@ -1,13 +1,65 @@
-
+html {
+    overflow-y: scroll;
+}
 
 #theme-buttons {
-    line-height: 12px;
-    width: 50px;
     font-size: 8pt;
-    font-family: tahoma;
+    font-family: 'Source Code Pro';
     margin-top: 1px;
-    margin-right: 2px;
+    margin-right: 20px;
     position:absolute;
     top:0;
     right:0;
+}
+
+#sidebar-buttons {
+    font-size: 8pt;
+    font-family: 'Source Code Pro';
+    margin-top: 20px;
+    margin-right: 20px;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+#hard-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 15%;
+    margin: 0;
+    height: 100%;
+}
+
+#sidebar-bg {
+    width: 15%;
+    position: absolute;
+    margin: 0;
+    height: 100%;
+}
+
+#sidebar {
+    margin-left: 5%;
+    margin-top: 100px;
+}
+
+#content-container { 
+    max-width: 50%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+#content { 
+    max-width: 100ch;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:10px;
+    width:100% 
 }

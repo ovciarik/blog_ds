@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/gutenberg.css">
+        <link rel="stylesheet" href="css/modern.css">
+        <link rel="stylesheet" href="{{ theme_file }}">
+        <link rel="stylesheet" href="css/style_common.css">
+        <link rel="stylesheet" href="{{ sidebar_file }}">
+    </head>
+    <body>
+        <div id="hard-sidebar"></div>
+
+        <div id="container">
+            <div id="sidebar-bg">
+                <div id="sidebar">
+                    {{ sidebar|safe }}
+                </div>
+            </div>
+            <div id="content-container">
+                <div id="content">
+                    {{ content|safe }}
+                </div>
+            </div>
+            <div id="theme-buttons">
+                {% for theme in themes %}
+
+                    <a href="?theme={{ theme }}&sidebar={{ sidebar_status }}">{{ theme }}</a>
+                    <!-- <a href="?theme=default&sidebar={{ sidebar_status }}">default</a> -->
+                    <!-- <a href="?theme=acme&sidebar={{ sidebar_status }}">acme</a> -->
+                    <!-- <a href="?theme=light&sidebar={{ sidebar_status }}">light</a> -->
+                    <!-- <a href="?theme=dark&sidebar={{ sidebar_status }}">dark</a> -->
+                    <!-- <a href="?theme=monokai&sidebar={{ sidebar_status }}">monokai</a> -->
+                {% endfor %}
+            </div>
+            <div id="sidebar-buttons">
+                <a href="?theme={{ theme_name }}&sidebar=on">sidebar_on</a>
+                <a href="?theme={{ theme_name }}&sidebar=off">sidebar_off</a>
+            </div>
+
+        </div>
+    </body>
+</html>
